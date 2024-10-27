@@ -1,0 +1,41 @@
+/* Sayfanın tümü için gerekli temel stiller */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Arka plan rengini gri yap */
+}
+
+/* İlerleme çubuğu (dikdörtgen) */
+.loading-bar {
+    width: 400px;      /* Genişliği ayarla */
+    height: 40px;      /* Yüksekliği ayarla */
+    border: 5px solid #9e0404;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(255, 198, 27);
+}
+
+/* İçindeki kare */
+.moving-box {
+    width: 30px;
+    height: 38px;
+    background-color: #9e0404;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Kareyi dikeyde ortala */
+    animation: move 2s linear infinite; /* Sonsuz hareket animasyonu */
+}
+
+/* Sağdan sola hareket animasyonu */
+@keyframes move {
+    0% {
+        left: 100%; /* Başlangıç: sağda */
+    }
+    100% {
+        left: -30px; /* Bitiş: solda (çubuğun dışına çıkar) */
+    }
+}

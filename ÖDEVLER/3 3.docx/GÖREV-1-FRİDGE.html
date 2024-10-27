@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görev 1 - Ürünler</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+            gap: 20px;
+        }
+        .product {
+            width: 150px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fff;
+        }
+        .product i {
+            font-size: 50px;
+            color: #ff6347;
+        }
+        .product-name {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        @media (max-width: 800px) {
+            .product {
+                width: 120px;
+            }
+        }
+        @media (max-width: 500px) {
+            .product {
+                width: 100px;
+            }
+        }
+        .thats-all {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="product">
+            <i class="fas fa-apple-alt"></i>
+            <div class="product-name">Apple</div>
+        </div>
+        <div class="product">
+            <i class="fas fa-bread-slice"></i>
+            <div class="product-name">Bread</div>
+        </div>
+        <div class="product">
+            <i class="fas fa-ice-cream"></i>
+            <div class="product-name">Ice Cream</div>
+        </div>
+        <div class="product">
+            <i class="fas fa-fish"></i>
+            <div class="product-name">Fish</div>
+        </div>
+        <div class="product">
+            <i class="fas fa-cheese"></i>
+            <div class="product-name">Cheese</div>
+        </div>
+    </div>
+
+    <div class="thats-all">That’s all</div>
+
+</body>
+</html>

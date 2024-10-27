@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Görevleri</title>
+    <script>
+        // 1. Kullanıcıdan adını isteyin ve yanıt olarak "Merhaba, onun adı!" yazısını görüntüleyin.
+        function greetUser() {
+            let ad = prompt("Adınız nedir?");
+            alert("Merhaba, " + ad + "!");
+        }
+        // 2. Kullanıcıdan doğum yılını isteyin, yaşını hesaplayın ve sonucu görüntüleyin.
+        function calculateAge() {
+            const günümüz = 2024;
+            let doğumyılı = prompt("Doğum yılınız nedir?");
+            let yaş = günümüz - doğumyılı;
+            alert("Yaşınız: " + yaş);
+        }
+
+        // 3. Kullanıcıdan kare kenarının uzunluğunu isteyin ve bu karenin çevresini görüntüleyin.
+        function squarePerimeter() {
+            let kenaruzunluğu = prompt("Karenin bir kenar uzunluğunu girin:");
+            let çevre = 4 * kenaruzunluğu;
+            alert("Karenin çevresi: " + çevre);
+        }
+
+        // 4. Kullanıcıdan dairenin yarıçapını isteyin ve dairenin alanını görüntüleyin.
+        function circleArea() {
+            let yarıçap = prompt("Dairenin yarıçapını girin:");
+            let alan = Math.PI * yarıçap * yarıçap;
+            alert("Dairenin alanı: " + alan);
+            
+        }
+
+        // 5. Kullanıcıdan iki şehir arasındaki mesafeyi ve ulaşmak istediği süreyi isteyin.
+        function calculateSpeed() {
+            let mesafe = prompt("İki şehir arasındaki mesafe (km):");
+            let zaman = prompt("Bu mesafeyi kaç saatte gitmek istiyorsunuz?");
+            let hız = mesafe / zaman;
+            alert("Gereken hız: " + hız + " km/saat");
+        }
+
+        // 6. Döviz dönüştürücü: Dolar'dan Euro'ya çevir.
+        function convertCurrency() {
+            const exchangeRate = 1.08; // Sabit döviz kuru (1 USD = 0.92 EUR)
+            let dolar = prompt("Dönüştürmek istediğiniz dolar miktarı:");
+            let euro = dolar * exchangeRate;
+            alert(dolar + " dolar, " + euro + " euro eder.");
+        }
+
+        // 7. Flash bellekte kaç dosya sığar.
+        function calculateFilesInFlashDrive() {
+            let flashCapacity = prompt("Flash belleğin kapasitesi (GB):");
+            let fileSize = 820; // MB
+            let filesFit = (flashCapacity * 1024) / fileSize;
+            alert("Flash belleğe " + Math.floor(filesFit) + " adet dosya sığar.");
+        }
+
+        // 8. Cüzdanınızdaki parayla kaç çikolata alabilirsiniz?
+        function calculateChocolates() {
+            let cüzdandakipara = prompt("Cüzdanınızdaki para miktarı:");
+            let çikolatafiyatı = prompt("Bir çikolata barının fiyatı:");
+            let çikolatasayısı = Math.floor(cüzdandakipara / çikolatafiyatı);
+            let kalanpara = cüzdandakipara % çikolatafiyatı;
+            alert("Alabileceğiniz çikolata sayısı: " + çikolatasayısı + ", Kalan para: " + kalanpara);
+        }
+
+        // 9. Üç basamaklı bir sayıyı ters çevirme.
+        function reverseNumber() {
+            let sayı = prompt("Üç basamaklı bir sayı girin:");
+            let terssayı = (sayı % 10) * 100 + Math.floor((sayı % 100) / 10) * 10 + Math.floor(sayı / 100);
+            alert("Ters çevrilmiş sayı: " + terssayı);
+        }
+
+        // 10. Sayının tek mi çift mi olduğunu belirleyin.
+        function checkOddOrEven() {
+            let tamsayı = prompt("Bir tamsayı girin:");
+            alert(tamsayı % 2 == 0 ? "Çift" : "Tek");
+        }
+    </script>
+</head>
+<body>
+
+    <h1>JavaScript Görevleri</h1>
+
+    <button onclick="greetUser()">1. Kullanıcıyı Selamla</button><br><br>
+    <button onclick="calculateAge()">2. Yaş Hesapla</button><br><br>
+    <button onclick="squarePerimeter()">3. Karenin Çevresi</button><br><br>
+    <button onclick="circleArea()">4. Dairenin Alanı</button><br><br>
+    <button onclick="calculateSpeed()">5. Gereken Hızı Hesapla</button><br><br>
+    <button onclick="convertCurrency()">6. Döviz Dönüştürücü</button><br><br>
+    <button onclick="calculateFilesInFlashDrive()">7. Flash Bellek Kapasitesi</button><br><br>
+    <button onclick="calculateChocolates()">8. Çikolata Hesapla</button><br><br>
+    <button onclick="reverseNumber()">9. Sayıyı Ters Çevir</button><br><br>
+    <button onclick="checkOddOrEven()">10. Tek mi Çift mi?</button><br><br>
+
+</body>
+</html>

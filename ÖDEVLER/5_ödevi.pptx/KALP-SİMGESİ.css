@@ -1,0 +1,47 @@
+/* Sayfa ve kalp simgesinin ortalanması */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+/* Kalp simgesi stil ayarları */
+.heart-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heart-container i {
+    font-size: 100px;
+    color: yellow;
+
+    border: 5px solid navy;
+    border-radius: 50%;
+    padding: 20px;
+    transition: transform 1s ease, color 1s ease, border-color 1s ease;
+}
+
+.heart-container:hover i {
+    transform: scale(2);
+
+    color: rgb(191, 9, 9);
+    border-color: rgb(255, 174, 0);
+}
+
+.cimbombom-text {
+    font-size: 24px;
+    font-weight: bold;
+    display: none;
+}
+
+.heart-container:hover .cimbombom-text {
+    display: block;
+    color: rgb(191, 9, 9);
+    transition: transform 2s all ;
+    
+}

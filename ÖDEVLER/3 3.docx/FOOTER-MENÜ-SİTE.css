@@ -1,0 +1,148 @@
+/* Genel ayarlar */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    background-color: rgb(204, 218, 210);
+}
+
+.menu {
+    width: 60px; /* Başlangıç genişliği */
+    background-color: #01b2f3;
+    transition: width 0.3s;
+    overflow: hidden;
+    position: fixed;
+    height: 100%; 
+    
+
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #f4f4f4;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    
+}
+
+.icon {
+    font-size: 24px; /* İkon boyutu */
+    margin-right: 10px;
+    color: #f4f4f4;
+}
+
+.text {
+    display: none; /* Başlangıçta metni gizle */
+}
+
+.menu:hover {
+    width: 200px; /* Hover durumunda genişlik */
+}
+
+.menu:hover .text {
+    display: block; /* Hover durumunda metni göster */
+}
+
+.menu-item:hover {
+    transform: scale(1.1); /* Hover durumunda büyüt */
+}
+
+.header-text {
+    margin-left:auto ; /* Menü genişliğine göre ayarlayın */
+    padding: 10px;
+    background-color: #f4f4f4; /* Arka plan rengi */
+    position: flex; /* Menü etkilenmez */
+}
+
+.content {
+    text-align: center;
+    margin-left: 60px; /* Menü genişliğine göre ayarlayın */
+    padding: auto;
+    background-color: #01b2f3;
+    height: calc(1000px); /* Yüksekliği ayarlayın */
+    overflow-y: auto; /* İçerik alanında kaydırma */
+}
+
+
+/* Başlık ve Menü */
+header {
+    position: flex;
+    background-color: #01b2f3; /* Mavi arka plan */
+    color: white;
+    padding: 2px;
+    text-align: center;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+
+
+/* Konteyner */
+.container {
+    display: flex;
+    padding: 20px ; 
+}
+
+/* Yan Paneller */
+.left-panel {
+    background-color: #01b2f3; /* Siyah arka plan */
+    color: white;
+    padding: 20px;
+    width: 200px;
+    margin-left: 50px;
+}
+
+.left-panel2 {
+    background-color: #01b2f3;
+    color: white;
+    padding: 20px;
+    width: 200px;
+    margin-left: 30px;
+    
+}
+
+.right-panel {
+    background-color: #01b2f3; /* Siyah arka plan */
+    color: white;
+    padding: 20px;
+    width: 200px; /* Sağ panel için genişlik */
+    margin-left: 20px; /* Soldaki içerik alanından boşluk bırak */
+    
+}
+
+
+/* Ana içerik */
+main {
+    flex: 2 ; /* Ana içeriğin esnek olmasını sağlar */
+    padding: 20px;
+    position: flex;
+    margin-left:auto;
+}
+
+.content-block {
+    background-color: #01b2f3; /* Mavi arka plan */
+    color: white;
+    padding: 40px;
+    margin-bottom: 20px; /* Bloklar arası boşluk */
+    position: flex;
+    margin-left: 10px;
+    margin-right: 3px;
+}
+
+/* Alt bilgi */
+footer {
+    background-color: rgb(181, 192, 186);
+    color: rgb(23, 5, 5);
+    text-align: center;
+    padding: 2px;
+    position: flex;
+    bottom: 0;
+    width: 100%;
+    margin-top: 265px;
+
+}

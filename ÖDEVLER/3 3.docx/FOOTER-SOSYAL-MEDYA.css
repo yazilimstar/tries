@@ -1,0 +1,122 @@
+/* Genel ayarlar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Arka plan rengi */
+}
+
+/* Alt Bilgi */
+footer {
+    background-color: #333; /* Siyah arka plan */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer içerik ayarları */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ortala */
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Menü ve sosyal medya arasında boşluk */
+}
+
+.menu-column {
+    margin: 0 30px; /* Sütunlar arası boşluk */
+}
+
+.menu-column h4 {
+    margin-bottom: 10px; /* Başlık ve liste arasında boşluk */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0; /* Liste öğeleri arasında boşluk */
+}
+
+ul li a {
+    color: white;
+    text-decoration: none; /* Alt çizgi yok */
+}
+
+ul li a:hover {
+    text-decoration: underline; /* Üzerine gelindiğinde altı çizili */
+}
+
+/* Sosyal medya simgeleri */
+.social-media {
+    margin-top: 10px; /* Sosyal medya simgeleri için boşluk */
+}
+
+.social-media a {
+    color: white; /* Varsayılan renk */
+    margin: 0 10px; /* Simgeler arasında boşluk */
+    font-size: 24px; /* Simgelerin boyutu */
+    transition: transform 0.3s ease, color 0.3s ease; /* Büyüme ve renk geçişi */
+}
+.social-media b {
+    color: white; /* Varsayılan renk */
+    margin: 0 10px; /* Simgeler arasında boşluk */
+    font-size: 24px; /* Simgelerin boyutu */
+    transition: transform 0.3s ease, color 0.3s ease; /* Büyüme ve renk geçişi */
+}
+.social-media span {
+    color: white; /* Varsayılan renk */
+    margin: 0 10px; /* Simgeler arasında boşluk */
+    font-size: 24px; /* Simgelerin boyutu */
+    transition: transform 0.3s ease, color 0.3s ease; /* Büyüme ve renk geçişi */
+}
+.social-media a:hover {
+    transform: scale(2); /* Üzerine gelindiğinde simgeleri 2 kat büyüt */
+    color: rgb(0, 21, 255); /* Renk değişimi orijinal renge döner */
+}
+
+.social-media b:hover {
+    transform: scale(2); /* Üzerine gelindiğinde simgeleri 2 kat büyüt */
+    color: rgb(0, 200, 255); /* Renk değişimi orijinal renge döner */
+}
+.social-media span:hover {
+    transform: scale(2); /* Üzerine gelindiğinde simgeleri 2 kat büyüt */
+    color: fuchsia; /* Renk değişimi orijinal renge döner */
+
+}
+
+
+.separator {
+    height: 1px; /* Çizgi yüksekliği */
+    background-color: white; /* Çizgi rengi */
+    width: 80%; /* Çizgi genişliği */
+    margin: 20px 0; /* Üst ve alt boşluk */
+}
+.animated-line {
+    height: 4px; /* Çizginin kalınlığı */
+    background-color: rgb(164, 155, 155); /* Çizginin rengi */
+    width: 0; /* Başlangıçta genişliği 0 olacak */
+    margin: 20px auto; /* Ortala */
+    animation: grow 2s ease forwards; /* 2 saniyede büyüme animasyonu */
+}
+
+/* Animasyon tanımı */
+@keyframes grow {
+    0% {
+        width: 0; /* Başlangıç genişliği 0 */
+    }
+    100% {
+        width: 100%; /* Büyüme sonrası genişlik tam olacak */
+    }
+}
+
+footer p {
+ height: 100% ;
+ width: 100%;
+    background-color: #9f9d9d;
+}

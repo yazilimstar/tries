@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    background-color: mintcream;
+}
+
+.menu {
+    width: 60px; /* Başlangıç genişliği */
+    background-color: #01b2f3;
+    transition: width 0.3s;
+    overflow: hidden;
+    position: fixed; /* Menü sabitlenmiş şekilde konumlanır */
+    height: 100%; /* Menü yüksekliği */
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #f4f4f4;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.icon {
+    font-size: 24px; /* İkon boyutu */
+    margin-right: 10px;
+    color: #f4f4f4;
+}
+
+.text {
+    display: none; /* Başlangıçta metni gizle */
+}
+
+.menu:hover {
+    width: 200px; /* Hover durumunda genişlik */
+}
+
+.menu:hover .text {
+    display: block; /* Hover durumunda metni göster */
+}
+
+.menu-item:hover {
+    transform: scale(1.1); /* Hover durumunda büyüt */
+}
+
+.header-text {
+    margin-left: 80px; /* Menü genişliğine göre ayarlayın */
+    padding: 20px;
+    background-color: #f4f4f4b7; /* Arka plan rengi */
+    position: relative; /* Menü etkilenmez */
+}
+
+.content {
+    text-align: center;
+    margin-left: 60px; /* Menü genişliğine göre ayarlayın */
+    padding: auto;
+    background-color: #f4f4f4ab;
+    height: calc(1000px); /* Yüksekliği ayarlayın */
+    overflow-y: auto; /* İçerik alanında kaydırma */
+}

@@ -1,0 +1,52 @@
+.tableborder1 {
+    column-span: inherit;
+}
+thead {
+    padding: 20px;
+    margin: auto;
+    width: %100;
+
+}
+table {
+    width: 101%;
+height: 101%;
+
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: bisque;
+}
+
+body {
+    overflow: auto;
+}
+.header-cl {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(34, 0, 255);
+    background-color: rgb(162, 238, 238);
+}
+th,
+td {
+    padding: 20px;
+    font-size: medium;
+    border: 3px solid blue;
+    text-align: center;
+    background-color: aliceblue;
+    overflow: auto;
+}
+caption {
+    background-color: aqua;
+    padding: 20px;
+    width: %100;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    background-color: aqua;
+}
+
+.okişareti {
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    color: brown;
+}
