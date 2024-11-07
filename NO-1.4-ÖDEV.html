@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonksiyon Görevleri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #5a5a5a;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            width: 100%;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        // 1. İki sayıyı karşılaştıran işlev
+        function compareNumbers() {
+            const num1 = parseInt(prompt("İlk sayıyı girin:"));
+            const num2 = parseInt(prompt("İkinci sayıyı girin:"));
+            const result = num1 < num2 ? -1 : num1 > num2 ? 1 : 0;
+            alert(`Sonuç: ${result}`);
+        }
+
+        // 2. Faktöriyel hesaplayan işlev
+        function factorial(num = parseInt(prompt("Bir sayı girin:"))) {
+            if (num <= 1) return 1;
+            return num * factorial(num - 1);
+        }
+        function calculateFactorial() {
+            const num = parseInt(prompt("Bir sayı girin:"));
+            alert(`Faktöriyel: ${factorial(num)}`);
+        }
+
+        // 3. Üç ayrı rakamdan sayıya dönüştüren işlev
+        function convertToNumber() {
+            const digit1 = prompt("Birinci rakam:");
+            const digit2 = prompt("İkinci rakam:");
+            const digit3 = prompt("Üçüncü rakam:");
+            const result = parseInt(digit1 + digit2 + digit3);
+            alert(`Oluşan sayı: ${result}`);
+        }
+
+        // 4. Dikdörtgen/kare alanını hesaplayan işlev
+        function calculateArea() {
+            const length = parseInt(prompt("Uzunluk girin:"));
+            const width = prompt("Genişlik girin (Opsiyonel):");
+            const area = width ? length * parseInt(width) : length * length;
+            alert(`Alan: ${area}`);
+        }
+
+        // 5. Mükemmel sayıyı kontrol eden işlev
+        function isPerfectNumber(num) {
+            let sum = 0;
+            for (let i = 1; i <= num / 2; i++) {
+                if (num % i === 0) sum += i;
+            }
+            return sum === num;
+        }
+        function checkPerfectNumber() {
+            const num = parseInt(prompt("Bir sayı girin:"));
+            alert(isPerfectNumber(num) ? `${num} mükemmel bir sayıdır.` : `${num} mükemmel bir sayı değildir.`);
+        }
+
+        // 6. Aralıktaki mükemmel sayıları gösteren işlev
+        function showPerfectNumbersInRange() {
+            const min = parseInt(prompt("Minimum değeri girin:"));
+            const max = parseInt(prompt("Maksimum değeri girin:"));
+            let result = "";
+            for (let i = min; i <= max; i++) {
+                if (isPerfectNumber(i)) result += i + " ";
+            }
+            alert(result ? `Mükemmel sayılar: ${result}` : "Aralıkta mükemmel sayı yok.");
+        }
+
+        // 7. Zamanı "ss:dd:ss" biçiminde yazan işlev
+        function formatTime() {
+            const hours = prompt("Saat girin:");
+            const minutes = prompt("Dakika girin (Opsiyonel):") || "00";
+            const seconds = prompt("Saniye girin (Opsiyonel):") || "00";
+            alert(`Zaman: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
+        }
+
+        // 8. Zamanı saniyelere dönüştüren işlev
+        function timeToSeconds() {
+            const hours = parseInt(prompt("Saat girin:"));
+            const minutes = parseInt(prompt("Dakika girin:"));
+            const seconds = parseInt(prompt("Saniye girin:"));
+            const totalSeconds = hours * 3600 + minutes * 60 + seconds;
+            alert(`Toplam saniye: ${totalSeconds}`);
+        }
+
+        // 9. Saniyeyi saat, dakika ve saniyeye dönüştüren işlev
+        function secondsToTime() {
+            let seconds = parseInt(prompt("Saniye girin:"));
+            const hours = Math.floor(seconds / 3600);
+            seconds %= 3600;
+            const minutes = Math.floor(seconds / 60);
+            seconds %= 60;
+            alert(`Zaman: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
+        }
+
+        // 10. Tarihler arasındaki farkı hesaplayan işlev
+        function dateDifference() {
+            const startHours = parseInt(prompt("Başlangıç saati girin:"));
+            const startMinutes = parseInt(prompt("Başlangıç dakikası girin:"));
+            const startSeconds = parseInt(prompt("Başlangıç saniyesi girin:"));
+            const endHours = parseInt(prompt("Bitiş saati girin:"));
+            const endMinutes = parseInt(prompt("Bitiş dakikası girin:"));
+            const endSeconds = parseInt(prompt("Bitiş saniyesi girin:"));
+
+            const startTime = startHours * 3600 + startMinutes * 60 + startSeconds;
+            const endTime = endHours * 3600 + endMinutes * 60 + endSeconds;
+
+            let difference = Math.abs(endTime - startTime);
+            const hours = Math.floor(difference / 3600);
+            difference %= 3600;
+            const minutes = Math.floor(difference / 60);
+            const seconds = difference % 60;
+
+            alert(`Fark: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Fonksiyon Görevleri</h1>
+    <div class="container">
+        <button onclick="compareNumbers()">1. Sayıları Karşılaştır</button>
+        <button onclick="calculateFactorial()">2. Faktöriyel Hesapla</button>
+        <button onclick="convertToNumber()">3. Rakamları Sayıya Dönüştür</button>
+        <button onclick="calculateArea()">4. Alan Hesapla</button>
+        <button onclick="checkPerfectNumber()">5. Mükemmel Sayı Kontrolü</button>
+        <button onclick="showPerfectNumbersInRange()">6. Aralıktaki Mükemmel Sayılar</button>
+        <button onclick="formatTime()">7. Zamanı Biçimlendir</button>
+        <button onclick="timeToSeconds()">8. Zamanı Saniyeye Çevir</button>
+        <button onclick="secondsToTime()">9. Saniyeyi Zamana Çevir</button>
+        <button onclick="dateDifference()">10. Tarihler Arasındaki Fark</button>
+    </div>
+
+</body>
+
+</html>

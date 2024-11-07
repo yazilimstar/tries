@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonksiyon Görevleri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        h1 {
+            color: #555;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            width: 100%;
+            font-size: 16px;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn1 { background-color: #4CAF50; }
+        .btn2 { background-color: #2196F3; }
+        .btn3 { background-color: #FF9800; }
+        .btn4 { background-color: #E91E63; }
+        .btn5 { background-color: #9C27B0; }
+        .btn6 { background-color: #673AB7; }
+        .btn7 { background-color: #3F51B5; }
+        .btn8 { background-color: #00BCD4; }
+        .btn9 { background-color: #009688; }
+        .btn10 { background-color: #CDDC39; }
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+    <script>
+        // 1. Küçük sayıyı döndüren fonksiyon
+        function findSmallerNumber() {
+            const num1 = parseInt(prompt("İlk sayıyı girin:"));
+            const num2 = parseInt(prompt("İkinci sayıyı girin:"));
+            const result = Math.min(num1, num2);
+            alert(`Daha küçük sayı: ${result}`);
+        }
+
+        // 2. Üs hesaplayan fonksiyon
+        function powerNumber() {
+            const base = parseInt(prompt("Taban sayıyı girin:"));
+            const exponent = parseInt(prompt("Üs değerini girin:"));
+            const result = Math.pow(base, exponent);
+            alert(`Sonuç: ${result}`);
+        }
+
+        // 3. İşlem yapan fonksiyon
+        function calculateOperation() {
+            const num1 = parseFloat(prompt("İlk sayıyı girin:"));
+            const operator = prompt("İşlem girin (+ - * /):");
+            const num2 = parseFloat(prompt("İkinci sayıyı girin:"));
+            let result;
+            switch (operator) {
+                case '+': result = num1 + num2; break;
+                case '-': result = num1 - num2; break;
+                case '*': result = num1 * num2; break;
+                case '/': result = num2 !== 0 ? num1 / num2 : "Bölme hatası"; break;
+                default: result = "Geçersiz işlem"; break;
+            }
+            alert(`Sonuç: ${result}`);
+        }
+
+        // 4. Asal sayıyı kontrol eden fonksiyon
+        function isPrime() {
+            const num = parseInt(prompt("Bir sayı girin:"));
+            if (num <= 1) return alert(`${num} asal değil.`);
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return alert(`${num} asal değil.`);
+            }
+            alert(`${num} asal bir sayıdır.`);
+        }
+
+        // 5. Çarpım tablosunu yazdıran fonksiyon
+        function printMultiplicationTable() {
+            let output = "";
+            for (let num = 2; num <= 9; num++) {
+                output += `\n${num} sayısının çarpım tablosu:\n`;
+                for (let i = 1; i <= 10; i++) {
+                    output += `${num} x ${i} = ${num * i}\n`;
+                }
+            }
+            alert(output);
+        }
+
+        // 6. % operatörünü simüle eden fonksiyon
+        function moduloWithoutPercent(a, b) {
+            while (a >= b) a -= b;
+            return a;
+        }
+        function calculateModulo() {
+            const num1 = parseInt(prompt("Birinci sayıyı girin:"));
+            const num2 = parseInt(prompt("İkinci sayıyı girin:"));
+            const result = moduloWithoutPercent(num1, num2);
+            alert(`Kalan: ${result}`);
+        }
+
+        // 7. 1 ila 5 arası sayıların toplamını döndüren fonksiyon
+        function sumNumbers() {
+            const result = (1 + 2 + 3 + 4 + 5);
+            alert(`1'den 5'e kadar sayıların toplamı: ${result}`);
+        }
+
+        // 8. 1 ila 5 arası sayıların en büyüğünü döndüren fonksiyon
+        function maxNumber() {
+            const result = Math.max(1, 2, 3, 4, 5);
+            alert(`1'den 5'e kadar sayıların en büyüğü: ${result}`);
+        }
+
+        // 9. Çift veya tek sayıları yazdıran fonksiyon
+        function printEvenOrOdd() {
+            const min = parseInt(prompt("Başlangıç değeri girin:"));
+            const max = parseInt(prompt("Bitiş değeri girin:"));
+            const isEven = confirm("Çift sayıları görmek istiyor musunuz?");
+            let output = `Sonuç: `;
+            for (let i = min; i <= max; i++) {
+                if (isEven && i % 2 === 0) output += `${i} `;
+                else if (!isEven && i % 2 !== 0) output += `${i} `;
+            }
+            alert(output);
+        }
+
+        // 10. Sonraki günü hesaplayan fonksiyon
+        function isLeapYear(year) {
+            return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        }
+        function getNextDay() {
+            let day = parseInt(prompt("Günü girin:"));
+            let month = parseInt(prompt("Ayı girin:"));
+            let year = parseInt(prompt("Yılı girin:"));
+
+            const daysInMonth = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            day++;
+
+            if (day > daysInMonth[month - 1]) {
+                day = 1;
+                month++;
+                if (month > 12) {
+                    month = 1;
+                    year++;
+                }
+            }
+
+            alert(`Sonraki gün: ${String(day).padStart(2, '0')}.${String(month).padStart(2, '0')}.${year}`);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Fonksiyon Görevleri</h1>
+    <div class="container">
+        <button class="btn1" onclick="findSmallerNumber()">1. Küçük Sayıyı Bul</button>
+        <button class="btn2" onclick="powerNumber()">2. Sayıyı Üssüne Yükselt</button>
+        <button class="btn3" onclick="calculateOperation()">3. İşlem Hesapla</button>
+        <button class="btn4" onclick="isPrime()">4. Asal Sayı Kontrolü</button>
+        <button class="btn5" onclick="printMultiplicationTable()">5. Çarpım Tablosu</button>
+        <button class="btn6" onclick="calculateModulo()">6. Mod Hesapla</button>
+        <button class="btn7" onclick="sumNumbers()">7. 1-5 Arası Toplam</button>
+        <button class="btn8" onclick="maxNumber()">8. 1-5 Arası En Büyük</button>
+        <button class="btn9" onclick="printEvenOrOdd()">9. Çift veya Tek Sayıları Yazdır</button>
+        <button class="btn10" onclick="getNextDay()">10. Sonraki Günü Hesapla</button>
+    </div>
+
+</body>
+</html>
