@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döngü Görevleri</title>
+    <script>
+        // WHILE Döngüsü Görevleri
+
+        // 1. Kullanıcının belirttiği kadar # sembolü yazdırın.
+        function printHashes() {
+            let count = parseInt(prompt("Kaç tane # sembolü yazdırmak istiyorsunuz?"));
+            let result = "";
+            let i = 0;
+            while (i < count) {
+                result += "# ";
+                i++;
+            }
+            alert(result);
+        }
+
+        // 2. Kullanıcı bir sayı girdiğinde, girilen sayıdan 0'a kadar olan tüm sayıları yazdırın.
+        function countdown() {
+            let num = parseInt(prompt("Bir sayı girin:"));
+            let result = "";
+            while (num >= 0) {
+                result += num + " ";
+                num--;
+            }
+            alert(result);
+        }
+
+        // 3. Bir sayı ve üs isteyin. Sayıyı belirtilen üssüne yükseltin ve sonucu yazdırın.
+        function powerCalculation() {
+            let base = parseInt(prompt("Bir taban sayısı girin:"));
+            let exponent = parseInt(prompt("Bir üs girin:"));
+            let result = 1;
+            let i = 0;
+            while (i < exponent) {
+                result *= base;
+                i++;
+            }
+            alert(`Sonuç: ${result}`);
+        }
+
+        // 4. Kullanıcıdan 2 sayı isteyin ve tüm ortak bölenleri bulun.
+        function findCommonDivisors() {
+            let num1 = parseInt(prompt("Birinci sayıyı girin:"));
+            let num2 = parseInt(prompt("İkinci sayıyı girin:"));
+            let result = "";
+            let i = 1;
+            while (i <= Math.min(num1, num2)) {
+                if (num1 % i === 0 && num2 % i === 0) {
+                    result += i + " ";
+                }
+                i++;
+            }
+            alert(`Ortak bölenler: ${result}`);
+        }
+
+        // 5. Kullanıcının girdiği sayının faktöriyelini hesaplayın.
+        function factorial() {
+            let num = parseInt(prompt("Bir sayı girin:"));
+            let result = 1;
+            let i = 1;
+            while (i <= num) {
+                result *= i;
+                i++;
+            }
+            alert(`Faktöriyel: ${result}`);
+        }
+
+        // DO WHILE Döngüsü Görevleri
+
+        // 1. Kullanıcı doğru cevabı bulana kadar 2 + 2 * 2 işlemini çözmeyi teklif et.
+        function solveExpression() {
+            let answer;
+            do {
+                answer = parseInt(prompt("2 + 2 * 2 işleminin sonucunu girin:"));
+            } while (answer !== 6);
+            alert("Doğru cevap!");
+        }
+
+        // 2. 1000'i 2'ye bölmeye devam edin, ta ki sayı 50'den küçük olana kadar.
+        function divideUntilLessThan50() {
+            let num = 1000;
+            let count = 0;
+            do {
+                num /= 2;
+                count++;
+            } while (num >= 50);
+            alert(`Sonuç: ${num}, Bölme sayısı: ${count}`);
+        }
+
+        // FOR Döngüsü Görevleri
+
+        // 1. Belirtilen kullanıcı sayısına göre 1 ila 100 arasındaki tüm sayıları yazdırın.
+        function printNumbers() {
+            let count = parseInt(prompt("Kaç sayıyı yazdırmak istiyorsunuz (1 ila 100 arasında)?"));
+            let result = "";
+            for (let i = 1; i <= 100 && i <= count; i++) {
+                result += i + " ";
+            }
+            alert(result);
+        }
+
+        // 2. Kullanıcı tarafından belirtilen aralıktaki her 4. öğeyi yazdırın.
+        function printEveryFourth() {
+            let min = parseInt(prompt("Minimum aralık değeri girin:"));
+            let max = parseInt(prompt("Maksimum aralık değeri girin:"));
+            let result = "";
+            for (let i = min; i <= max; i += 4) {
+                result += i + " ";
+            }
+            alert(result);
+        }
+
+        // 3. Sayıyı sorgulayın ve onun asal olup olmadığını kontrol edin.
+        function checkPrime() {
+            let num = parseInt(prompt("Bir sayı girin:"));
+            let isPrime = num > 1;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            alert(isPrime ? `${num} bir asal sayıdır.` : `${num} asal bir sayı değildir.`);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Döngü Görevleri</h1>
+
+    <!-- WHILE Döngüsü Görevleri -->
+    <h2>WHILE Döngüsü Görevleri</h2>
+    <button onclick="printHashes()">1. # Sembolü Yazdır</button><br><br>
+    <button onclick="countdown()">2. Girilen Sayıdan 0'a Kadar Sayıları Yazdır</button><br><br>
+    <button onclick="powerCalculation()">3. Sayıyı Üssüne Yükselt</button><br><br>
+    <button onclick="findCommonDivisors()">4. İki Sayının Ortak Bölenlerini Bul</button><br><br>
+    <button onclick="factorial()">5. Sayının Faktöriyelini Hesapla</button><br><br>
+
+    <!-- DO WHILE Döngüsü Görevleri -->
+    <h2>DO WHILE Döngüsü Görevleri</h2>
+    <button onclick="solveExpression()">1. 2 + 2 * 2 İşlemini Çöz</button><br><br>
+    <button onclick="divideUntilLessThan50()">2. 1000'i 2'ye Böl, 50'den Küçük Olana Kadar</button><br><br>
+
+    <!-- FOR Döngüsü Görevleri -->
+    <h2>FOR Döngüsü Görevleri</h2>
+    <button onclick="printNumbers()">1. 1 ila 100 Arasındaki Tüm Sayıları Yazdır</button><br><br>
+    <button onclick="printEveryFourth()">2. Her 4. Sayıyı Yazdır</button><br><br>
+    <button onclick="checkPrime()">3. Sayının Asal Olup Olmadığını Kontrol Et</button><br><br>
+
+</body>
+</html>

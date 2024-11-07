@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döngü Görevleri</title>
+    <script>
+        // 1. Kullanıcı tarafından belirlenen aralıktaki tüm sayıların toplamını hesaplayın. (FOR Döngüsü)
+        function sumInRange() {
+            let start = parseInt(prompt("Başlangıç sayısını girin:"));
+            let end = parseInt(prompt("Bitiş sayısını girin:"));
+            let sum = 0;
+            for (let i = start; i <= end; i++) {
+                sum += i;
+            }
+            alert("Toplam: " + sum);
+        }
+
+        // 2. Kullanıcıdan 2 sayı isteyin ve sadece en büyük ortak böleni bulun. (FOR Döngüsü - tersine)
+        function findGCD() {
+            let num1 = parseInt(prompt("Birinci sayıyı girin:"));
+            let num2 = parseInt(prompt("İkinci sayıyı girin:"));
+            let gcd = 1;
+            for (let i = Math.min(num1, num2); i >= 1; i--) {
+                if (num1 % i === 0 && num2 % i === 0) {
+                    gcd = i;
+                    break;
+                }
+            }
+            alert("En büyük ortak bölen: " + gcd);
+        }
+
+        // 3. Kullanıcıdan bir sayı isteyin ve bu sayının tüm bölenlerini gösterin. (FOR Döngüsü)
+        function showDivisors() {
+            let num = parseInt(prompt("Bir sayı girin:"));
+            let divisors = "";
+            for (let i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    divisors += i + " ";
+                }
+            }
+            alert("Bölenler: " + divisors);
+        }
+
+        // 4. Girilen sayıdaki rakamların sayısını belirleyin. (WHILE Döngüsü)
+        function countDigits() {
+            let num = Math.abs(parseInt(prompt("Bir sayı girin:")));
+            let count = 0;
+            while (num > 0) {
+                num = Math.floor(num / 10);
+                count++;
+            }
+            alert("Rakam sayısı: " + count);
+        }
+
+        // 5. Kullanıcıdan 10 sayı isteyin ve pozitif, negatif, sıfır, çift ve tek sayıları hesaplayın. (FOR Döngüsü)
+        function calculateStats() {
+            let positive = 0, negative = 0, zero = 0, even = 0, odd = 0;
+            for (let i = 0; i < 10; i++) {
+                let num = parseInt(prompt("Bir sayı girin:"));
+                if (num > 0) positive++;
+                else if (num < 0) negative++;
+                else zero++;
+                
+                if (num % 2 === 0) even++;
+                else odd++;
+            }
+            alert(`Pozitif: ${positive}, Negatif: ${negative}, Sıfır: ${zero}, Çift: ${even}, Tek: ${odd}`);
+        }
+
+        // 6. Hesap makinesini döngüye alın. (DO WHILE Döngüsü)
+        function calculator() {
+            do {
+                let num1 = parseFloat(prompt("Birinci sayıyı girin:"));
+                let num2 = parseFloat(prompt("İkinci sayıyı girin:"));
+                let operator = prompt("İşlem girin (+, -, *, /):");
+                let result;
+                switch (operator) {
+                    case '+': result = num1 + num2; break;
+                    case '-': result = num1 - num2; break;
+                    case '*': result = num1 * num2; break;
+                    case '/': result = num1 / num2; break;
+                    default: alert("Geçersiz işlem!"); continue;
+                }
+                alert("Sonuç: " + result);
+            } while (confirm("Başka bir işlem yapmak istiyor musunuz?"));
+        }
+
+        // 7. Sayıyı belirli miktar kaydırın. (FOR Döngüsü)
+        function shiftNumber() {
+            let num = prompt("Bir sayı girin:");
+            let shift = parseInt(prompt("Kaç basamak kaydırmak istiyorsunuz?"));
+            for (let i = 0; i < shift; i++) {
+                num = num.slice(1) + num[0];
+            }
+            alert("Kaydırılmış sayı: " + num);
+        }
+
+        // 8. Haftanın günlerini döngüye alın. (DO WHILE Döngüsü)
+        function showDaysOfWeek() {
+            const days = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"];
+            let i = 0;
+            do {
+                alert("Gün: " + days[i]);
+                i = (i + 1) % days.length;
+            } while (confirm("Bir sonraki günü görmek ister misiniz?"));
+        }
+
+        // 9. Çarpım tablosunu gösterin. (FOR Döngüsü iç içe)
+        function showMultiplicationTable() {
+            let table = "";
+            for (let i = 2; i <= 9; i++) {
+                for (let j = 1; j <= 10; j++) {
+                    table += `${i} x ${j} = ${i * j}\n`;
+                }
+                table += "\n";
+            }
+            alert(table);
+        }
+
+        // 10. "Sayıyı Tahmin Et" adlı oyun. (WHILE Döngüsü)
+        function guessNumberGame() {
+            let low = 0, high = 100;
+            while (low <= high) {
+                let guess = Math.floor((low + high) / 2);
+                let response = prompt(`Sayınız ${guess} mı? Daha büyükse > yazın, daha küçükse < yazın, eşitse = yazın.`);
+                if (response === "=") {
+                    alert("Tahmin edildi! Sayınız: " + guess);
+                    break;
+                } else if (response === ">") {
+                    low = guess + 1;
+                } else if (response === "<") {
+                    high = guess - 1;
+                } else {
+                    alert("Geçersiz yanıt. Lütfen '>', '<', veya '=' girin.");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Döngü Görevleri</h1>
+
+    <button onclick="sumInRange()">1. Aralıktaki Tüm Sayıların Toplamı</button><br><br>
+    <button onclick="findGCD()">2. En Büyük Ortak Böleni Bul</button><br><br>
+    <button onclick="showDivisors()">3. Sayının Tüm Bölenlerini Göster</button><br><br>
+    <button onclick="countDigits()">4. Sayıdaki Rakam Sayısını Bul</button><br><br>
+    <button onclick="calculateStats()">5. Sayıların İstatistiklerini Hesapla</button><br><br>
+    <button onclick="calculator()">6. Hesap Makinesi</button><br><br>
+    <button onclick="shiftNumber()">7. Sayıyı Kaydır</button><br><br>
+    <button onclick="showDaysOfWeek()">8. Haftanın Günlerini Göster</button><br><br>
+    <button onclick="showMultiplicationTable()">9. Çarpım Tablosu</button><br><br>
+    <button onclick="guessNumberGame()">10. Sayıyı Tahmin Et</button><br><br>
+
+</body>
+</html>
